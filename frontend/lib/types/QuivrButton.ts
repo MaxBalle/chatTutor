@@ -10,5 +10,4 @@ export interface ButtonType {
   onClick?: () => void | Promise<void>;
   disabled?: boolean;
   hidden?: boolean;
-  important?: boolean;
 }

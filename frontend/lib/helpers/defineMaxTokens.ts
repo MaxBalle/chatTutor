@@ -21,9 +21,7 @@ export const defineMaxTokens = (
       return 2000;
     case "mistral/mistral-large-latest":
       return 2000;
-    case "gpt-4o":
-      return 2000;
     default:
-      return 2000;
+      return 1000;
   }
 };

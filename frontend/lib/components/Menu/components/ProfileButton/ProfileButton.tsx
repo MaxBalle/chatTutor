@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { useUserApi } from "@/lib/api/user/useUserApi";
 import { MenuButton } from "@/lib/components/Menu/components/MenuButton/MenuButton";
@@ -11,7 +11,6 @@ import { useUserData } from "@/lib/hooks/useUserData";
 import styles from "./ProfileButton.module.scss";
 
 export const ProfileButton = (): JSX.Element => {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
   const pathname = usePathname() ?? "";
   const isSelected = pathname.includes("/user");
   const { userIdentityData } = useUserData();
@@ -32,19 +31,13 @@ export const ProfileButton = (): JSX.Element => {
   }, []);
 
   return (
-    <Link
-      className={styles.button_wrapper}
-      href="/user"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <Link className={styles.button_wrapper} href="/user">
       <MenuButton
         label={username}
         iconName="user"
         type="open"
         isSelected={isSelected}
         color="primary"
-        parentHovered={isHovered}
       />
       {remainingCredits !== null && (
         <div className={styles.credits}>

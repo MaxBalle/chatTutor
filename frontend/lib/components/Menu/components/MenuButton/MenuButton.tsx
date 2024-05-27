@@ -13,7 +13,6 @@ export interface ButtonProps {
   type: "add" | "open";
   isSelected?: boolean;
   color: "gold" | "primary";
-  parentHovered?: boolean;
 }
 
 export const MenuButton = (props: ButtonProps): JSX.Element => {
@@ -38,7 +37,7 @@ export const MenuButton = (props: ButtonProps): JSX.Element => {
           ${
             props.color === "gold"
               ? styles.gold
-              : isHovered || props.parentHovered
+              : isHovered
               ? styles.primary
               : ""
           }`}
