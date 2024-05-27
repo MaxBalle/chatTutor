@@ -51,7 +51,6 @@ export const UploadDocumentModal = (): JSX.Element => {
             onClick={handleFeedBrain}
             disabled={knowledgeToFeed.length === 0 || !currentBrain}
             isLoading={feeding}
-            important={true}
           />
         </div>
       </div>

@@ -1,5 +1,4 @@
 import argparse
-import json
 import os
 import sys
 
@@ -71,7 +70,7 @@ def main(
     score = evaluate(
         response_dataset,
         metrics=ragas_metrics,
-        llm=ChatOpenAI(model="gpt-4o", temperature=0.1),
+        llm=ChatOpenAI(model="gpt-3.5-turbo-0125", temperature=0.1),
         embeddings=LangchainEmbeddingsWrapper(
             OpenAIEmbeddings(model="text-embedding-3-large", dimensions=1536)
         ),
@@ -79,7 +78,6 @@ def main(
 
     score.to_json(output_folder + "/score.json", orient="records")
     for metric in metrics:
-        print(f"{metric} scores: {score[metric]}")
         print(f"{metric} mean score: {score[metric].mean()}")
         print(f"{metric} median score: {score[metric].median()}")
     # Cleanup if a new brain was created
@@ -145,14 +143,7 @@ def generate_replies(
 
     for question in test_questions:
         response = brain_chain.invoke({"question": question, "chat_history": []})
-        cited_answer_data = response["answer"].additional_kwargs["tool_calls"][0][
-            "function"
-        ]["arguments"]
-        cited_answer_obj = json.loads(cited_answer_data)
-        print(f"Answer: {cited_answer_obj['answer']}")
-        answers.append(cited_answer_obj["answer"])
-        print(f"Context: {cited_answer_obj}")
-        print(response)
+        answers.append(response["answer"].content)
         contexts.append([context.page_content for context in response["docs"]])
 
     return Dataset.from_dict(
@@ -198,7 +189,7 @@ if __name__ == "__main__":
             "faithfulness",
             "answer_similarity",
         ],
-        default=["answer_similarity"],
+        default=["answer_correctness"],
         help="Metrics to evaluate",
     )
     parser.add_argument(

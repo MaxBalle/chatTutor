@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import Icon from "@/lib/components/ui/Icon/Icon";
+
 import styles from "./UserToInvite.module.scss";
 
 import { SingleSelector } from "../../../../../../../../../lib/components/ui/SingleSelector/SingleSelector";
@@ -41,20 +43,15 @@ export const UserToInvite = ({
 
   return (
     <div className={styles.user_to_invite_wrapper}>
-      <TextInput
-        label="Email"
-        inputValue={email}
-        setInputValue={setEmail}
-        onKeyDown={(event) => {
-          if (
-            event.key === "Backspace" &&
-            removeCurrentInvitation &&
-            !email.length
-          ) {
-            removeCurrentInvitation();
-          }
-        }}
+      <Icon
+        color="dangerous"
+        name="delete"
+        handleHover={true}
+        size="normal"
+        onClick={removeCurrentInvitation}
       />
+
+      <TextInput label="Email" inputValue={email} setInputValue={setEmail} />
 
       <div className={styles.selector}>
         <SingleSelector

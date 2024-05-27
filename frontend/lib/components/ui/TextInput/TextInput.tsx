@@ -11,7 +11,6 @@ type TextInputProps = {
   onSubmit?: () => void;
   disabled?: boolean;
   crypted?: boolean;
-  onKeyDown?: (event: React.KeyboardEvent) => void;
 };
 
 export const TextInput = ({
@@ -23,7 +22,6 @@ export const TextInput = ({
   onSubmit,
   disabled,
   crypted,
-  onKeyDown,
 }: TextInputProps): JSX.Element => {
   return (
     <div
@@ -43,7 +41,6 @@ export const TextInput = ({
           if (e.key === "Enter" && onSubmit) {
             onSubmit();
           }
-          onKeyDown?.(e);
         }}
       />
       {!simple && iconName && (

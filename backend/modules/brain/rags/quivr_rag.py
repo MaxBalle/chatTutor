@@ -1,10 +1,10 @@
-import datetime
 import os
 from operator import itemgetter
 from typing import List, Optional
 from uuid import UUID
 
 from langchain.chains import ConversationalRetrievalChain
+from langchain_community.embeddings import OllamaEmbeddings
 from langchain.llms.base import BaseLLM
 from langchain.prompts import HumanMessagePromptTemplate, SystemMessagePromptTemplate
 from langchain.retrievers import ContextualCompressionRetriever
@@ -12,7 +12,6 @@ from langchain.retrievers.document_compressors import FlashrankRerank
 from langchain.schema import format_document
 from langchain_cohere import CohereRerank
 from langchain_community.chat_models import ChatLiteLLM
-from langchain_community.embeddings import OllamaEmbeddings
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
 from langchain_core.pydantic_v1 import BaseModel as BaseModelV1
@@ -45,18 +44,9 @@ class cited_answer(BaseModelV1):
         description="The integer IDs of the SPECIFIC sources which justify the answer.",
     )
 
-    thoughts: str = FieldV1(
-        ...,
-        description="Explain shortly what you did to generate the answer. Explain any assumptions you made, and why you made them.",
-    )
-    followup_questions: List[str] = FieldV1(
-        ...,
-        description="Generate up to 3 follow-up questions that could be asked based on the answer given or context provided.",
-    )
-
 
 # First step is to create the Rephrasing Prompt
-_template = """Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language. Keep as much details as possible from previous messages. Keep entity names and all.
+_template = """Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language. Keep as much details as possible from previous messages. Keep entity names and all. 
 
 Chat History:
 {chat_history}
@@ -74,20 +64,11 @@ User Question: {question}
 Answer:
 """
 
-today_date = datetime.datetime.now().strftime("%B %d, %Y")
-
-system_message_template = (
-    f"Your name is Quivr. You're a helpful assistant. Today's date is {today_date}."
-)
-
-system_message_template += """
-When answering use markdown neat.
-Answer in a concise and clear manner.
-Use the following pieces of context from files provided by the user to answer the users.
-Answer in the same language as the user question.
+system_message_template = """
+When answering use markdown to make it concise and neat.
+Use the following pieces of context from files provided by the user that are store in a brain to answer  the users question in the same language as the user question. Your name is Quivr. You're a helpful assistant.  
 If you don't know the answer with the context provided from the files, just say that you don't know, don't try to make up an answer.
-If not None, User instruction to follow to answer: {custom_instructions}
-Don't cite the source id in the answer objects, but you can use the source to answer the question.
+User instruction to follow if provided to answer: {custom_instructions}
 """
 
 
@@ -155,7 +136,6 @@ class QuivrRAG(BaseModel):
 
     def model_compatible_with_function_calling(self):
         if self.model in [
-            "gpt-4o",
             "gpt-4-turbo",
             "gpt-4-turbo-2024-04-09",
             "gpt-4-turbo-preview",
@@ -348,7 +328,7 @@ class QuivrRAG(BaseModel):
             model=self.model,
             temperature=self.temperature,
             api_base=api_base,
-        )  # pyright: ignore reportPrivateUsage=none
+        )
         if self.model_compatible_with_function_calling():
 
             # And finally, we do the part that returns the answers
