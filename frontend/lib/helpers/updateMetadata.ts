@@ -7,12 +7,7 @@ export const UpdateMetadata = () => {
 
   useEffect(() => {
     const title = t("title");
-    const description = t("description");
     document.title = title;
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription instanceof HTMLMetaElement) {
-      metaDescription.content = description;
-    }
   }, [t]); 
 
   return null;

@@ -2,14 +2,11 @@ import { useEffect, useState } from "react";
 
 import { useMenuContext } from "@/lib/context/MenuProvider/hooks/useMenuContext";
 import { useUserSettingsContext } from "@/lib/context/UserSettingsProvider/hooks/useUserSettingsContext";
-import { useDevice } from "@/lib/hooks/useDevice";
 import { ButtonType } from "@/lib/types/QuivrButton";
 
-import { Notifications } from "./Notifications/Notifications";
 import styles from "./PageHeader.module.scss";
 
 import { Icon } from "../ui/Icon/Icon";
-import { QuivrButton } from "../ui/QuivrButton/QuivrButton";
 
 type Props = {
   iconName: string;
@@ -20,12 +17,10 @@ type Props = {
 export const PageHeader = ({
   iconName,
   label,
-  buttons,
 }: Props): JSX.Element => {
   const { isOpened } = useMenuContext();
   const { isDarkMode, setIsDarkMode } = useUserSettingsContext();
   const [lightModeIconName, setLightModeIconName] = useState("sun");
-  const { isMobile } = useDevice();
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
@@ -42,17 +37,6 @@ export const PageHeader = ({
         <span>{label}</span>
       </div>
       <div className={styles.buttons_wrapper}>
-        {buttons.map((button, index) => (
-          <QuivrButton
-            key={index}
-            label={button.label}
-            onClick={button.onClick}
-            color={button.color}
-            iconName={button.iconName}
-            hidden={button.hidden}
-          />
-        ))}
-        {!isMobile && <Notifications />}
         <Icon
           name={lightModeIconName}
           color="black"

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
+
 import { iconList } from "@/lib/helpers/iconList";
 
 import styles from "./FoldableSection.module.scss";
@@ -43,9 +44,6 @@ export const FoldableSection = (props: FoldableSectionProps): JSX.Element => {
           name="chevronDown"
           size="normal"
           color="black"
-          classname={`${styles.iconRotate} ${
-            folded ? styles.iconRotateDown : styles.iconRotateRight
-          }`}
         />
       </div>
       <div

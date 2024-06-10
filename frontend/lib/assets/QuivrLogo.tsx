@@ -9,12 +9,7 @@ export const QuivrLogo = ({
   size,
   color = "white",
 }: QuivrLogoProps): JSX.Element => {
-  let src = "/logo-white.svg";
-  if (color === "primary") {
-    src = "/logo-primary.svg";
-  } else if (color === "accent") {
-    src = "/logo-accent.svg";
-  }
+  const src = "/logo.png";
 
   const filter = color === "black" ? "invert(1)" : "none";
 
