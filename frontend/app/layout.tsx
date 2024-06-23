@@ -28,7 +28,7 @@ const RootLayout = async ({
   } = await supabase.auth.getSession();
 
   return (
-    <html lang="en">
+    <html lang="de">
       <body
         className={styles.body}
         // className={`bg-white text-black h-screen flex flex-col dark:bg-black dark:text-white w-full ${inter.className}`}

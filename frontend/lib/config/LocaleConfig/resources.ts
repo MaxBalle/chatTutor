@@ -1,4 +1,20 @@
 /* eslint-disable max-lines */
+import brain_de from "../../../public/locales/de/brain.json";
+import chat_de from "../../../public/locales/de/chat.json";
+import config_de from "../../../public/locales/de/config.json";
+import contact_de from "../../../public/locales/de/contact.json";
+import delete_brain_de from "../../../public/locales/de/deleteOrUnsubscribeFromBrain.json";
+import explore_de from "../../../public/locales/de/explore.json";
+import external_api_definition_de from "../../../public/locales/de/external_api_definition.json";
+import home_de from "../../../public/locales/de/home.json";
+import invitation_de from "../../../public/locales/de/invitation.json";
+import knowlegde_de from "../../../public/locales/de/knowledge.json";
+import login_de from "../../../public/locales/de/login.json";
+import logout_de from "../../../public/locales/de/logout.json";
+import monetization_de from "../../../public/locales/de/monetization.json";
+import translation_de from "../../../public/locales/de/translation.json";
+import upload_de from "../../../public/locales/de/upload.json";
+import user_de from "../../../public/locales/de/user.json";
 // import all namespaces English
 import brain_en from "../../../public/locales/en/brain.json";
 import chat_en from "../../../public/locales/en/chat.json";
@@ -129,6 +145,7 @@ enum SupportedLanguages {
   ptbr = "ptbr",
   ru = "ru",
   zh_cn = "zh_cn",
+    de = "de",
 }
 
 export const defaultNS = "translation";
@@ -241,4 +258,22 @@ export const resources: Record<SupportedLanguages, Translations> = {
     knowledge: knowlegde_zh_cn,
     external_api_definition: external_api_definition_zh_cn,
   },
+  de: {
+    brain: brain_de,
+    chat: chat_de,
+    config: config_de,
+    contact: contact_de,
+    explore: explore_de,
+    home: home_de,
+    invitation: invitation_de,
+    login: login_de,
+    logout: logout_de,
+    monetization: monetization_de,
+    translation: translation_de,
+    upload: upload_de,
+    user: user_de,
+    delete_or_unsubscribe_from_brain: delete_brain_de,
+    knowledge: knowlegde_de,
+    external_api_definition: external_api_definition_de,
+  }
 } as const;

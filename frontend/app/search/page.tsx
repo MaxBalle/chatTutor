@@ -59,7 +59,7 @@ const Search = (): JSX.Element => {
             <div className={styles.quivr_logo_wrapper}>
               <QuivrLogo size={80} />
               <div className={styles.quivr_text}>
-                <span>Talk to </span>
+                <span>Unterhalte dich mit dem </span>
                 <span className={styles.quivr_text_primary}>Chat Tutor</span>
               </div>
             </div>

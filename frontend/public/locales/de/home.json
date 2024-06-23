@@ -1,0 +1,37 @@
+{
+  "sign_in": "Anmelden",
+  "docs": "Dokumentation",
+  "pricing": "Preise",
+  "sign_up": "Registrieren",
+  "star_us": "Gib uns einen Stern auf GitHub",
+  "blog": "Blog",
+  "sponsored_by": "Gesponsert von",
+  "useCases": {
+    "title": "Erlebe es jetzt.",
+    "subtitle": "Schau dir unser Beispiel zur Nutzung von Quivr an"
+  },
+  "intro": {
+    "title": "Erhalte ein zweites Gehirn mit",
+    "subtitle": "Dein Produktivitätsassistent, der mit deinen Dateien und Lieblingsanwendungen verbunden ist",
+    "try_demo": "Kostenlose Demo ausprobieren",
+    "contact_sales": "Vertriebsteam kontaktieren"
+  },
+  "demo": {
+    "title": "Demovideo",
+    "start_now": "Jetzt starten"
+  },
+  "security": {
+    "cta": "Beginne noch heute"
+  },
+  "footer": {
+    "title": "Beginne noch heute",
+    "description_1": "Dein persönlicher Assistent, der als dein zweites Gehirn fungiert.",
+    "description_2": "Lade einfach deine Dateien hoch und stelle Fragen.",
+    "start_using": "Quivr nutzen",
+    "contact_sales": "Vertriebsteam kontaktieren"
+  },
+  "testimonials": {
+    "title": "Was die Leute über"
+  }
+}
+

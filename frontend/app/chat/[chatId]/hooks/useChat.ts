@@ -51,11 +51,7 @@ export const useChat = () => {
   const { t } = useTranslation(["chat"]);
 
   const addQuestion = async (question: string, callback?: () => void) => {
-    if (question === "") {
-      publish({
-        variant: "danger",
-        text: t("ask"),
-      });
+   if (question === "") {
 
       return;
     }

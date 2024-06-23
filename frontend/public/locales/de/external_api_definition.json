@@ -1,0 +1,15 @@
+{
+  "method_label": "Methode",
+  "url_placeholder": "URL",
+  "searchParams": "Suchparameter",
+  "headers": "Kopfzeilen",
+  "params": "Parameter",
+  "key": "Schlüssel",
+  "type": "Typ (String oder Nummer)",
+  "description": "Beschreibung",
+  "secrets": "Geheimnisse",
+  "paramsTabDescription": "Diese Werte werden als Anfragetext gesendet.",
+  "searchParamsTabDescription": "Diese Werte werden als Abfragezeichenfolge gesendet.",
+  "secretsTabDescription": "Diese Werte werden als Kopfzeilenschlüssel gesendet"
+}
+

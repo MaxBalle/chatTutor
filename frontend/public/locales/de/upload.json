@@ -1,0 +1,22 @@
+{
+  "title": "Wissensdaten hochladen",
+  "subtitle": "Text, Dokument, Tabelle, Präsentation, Audio, Video und URLs unterstützt",
+  "drop": "Dateien hier ablegen...",
+  "webSite": "Website-URL einfügen",
+  "success": "Datei erfolgreich hochgeladen",
+  "uploadFailed": "Fehler beim Hochladen der Datei: {{message}}",
+  "maxSizeError": "Datei zu groß",
+  "alreadyAdded": "{{fileName}} wurde bereits hinzugefügt, aber nicht an dein Gehirn gesendet",
+  "addFiles": "Bitte füge Dateien zum Hochladen hinzu",
+  "selectBrain": "Bitte wähle oder erstelle ein Gehirn, um eine Datei hochzuladen",
+  "invalidUrl": "Ungültige URL",
+  "crawlFailed": "Fehler beim Durchsuchen der Website: {{message}}",
+  "ohNo": "Oh nein!",
+  "selectBrainFirst": "Du musst zuerst ein Gehirn auswählen. 🧠💡🥲",
+  "missingNecessaryRole": "Du hast nicht die erforderliche Rolle, um Inhalte in das ausgewählte Gehirn hochzuladen. 🧠💡🥲",
+  "invalidFileType": "Ungültiger Dateityp",
+  "feed_form_submit_button": "An mein Gehirn senden",
+  "selected_brain_select_label": "Gehirn auswählen"
+}
+
+

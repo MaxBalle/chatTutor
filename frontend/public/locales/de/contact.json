@@ -1,0 +1,15 @@
+{
+  "speak_to": "Sprich mit unserem",
+  "sales_team": "Vertriebsteam",
+  "pricing": "Preise",
+  "form": {
+    "email": "Geschäfts-E-Mail",
+    "question": "Frage",
+    "submit": "Kontakt",
+    "placeholder_question": "Wie können wir dir helfen?",
+    "thank_you": "Vielen Dank!",
+    "thank_you_text": "Wir werden uns so schnell wie möglich bei dir melden.",
+    "sending_mail_error": "Es gab einen Fehler beim Senden deiner Nachricht. Bitte versuche es später erneut."
+  }
+}
+

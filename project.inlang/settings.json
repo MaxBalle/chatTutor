@@ -1,35 +1,41 @@
 {
-    "$schema": "https://inlang.com/schema/project-settings",
-    "sourceLanguageTag": "en",
-    "languageTags": [
-      "en", "es", "fr", "pt-br", "ru", "zh-cn"
-    ],
-    "modules": [
-      "https://cdn.jsdelivr.net/npm/@inlang/plugin-i18next@4/dist/index.js",
-      "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-empty-pattern@latest/dist/index.js",
-      "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-identical-pattern@latest/dist/index.js",
-      "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-missing-translation@latest/dist/index.js",
-      "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-without-source@latest/dist/index.js"
-    ],
-    "plugin.inlang.i18next": {
-      "pathPattern": {
-        "brain": "./frontend/public/locales/{languageTag}/brain.json",
-        "chat": "./frontend/public/locales/{languageTag}/chat.json",
-        "config": "./frontend/public/locales/{languageTag}/config.json",
-        "contact": "./frontend/public/locales/{languageTag}/contact.json",
-        "deleteOrUnsubscribeFormBrain": "./frontend/public/locales/{languageTag}/deleteOrUnsubscribeFormBrain.json",
-        "explore": "./frontend/public/locales/{languageTag}/explore.json",
-        "external_api_definition": "./frontend/public/locales/{languageTag}/external_api_definition.json",
-        "home": "./frontend/public/locales/{languageTag}/home.json",
-        "invitation": "./frontend/public/locales/{languageTag}/invitation.json",
-        "knowledge": "./frontend/public/locales/{languageTag}/knowledge.json",
-        "login": "./frontend/public/locales/{languageTag}/login.json",
-        "logout": "./frontend/public/locales/{languageTag}/logout.json",
-        "monetization": "./frontend/public/locales/{languageTag}/monetization.json",
-        "translation": "./frontend/public/locales/{languageTag}/translation.json",
-        "upload": "./frontend/public/locales/{languageTag}/upload.json",
-        "user": "./frontend/public/locales/{languageTag}/user.json"
-      }
+  "$schema": "https://inlang.com/schema/project-settings",
+  "sourceLanguageTag": "de",
+  "languageTags": [
+    "en",
+    "es",
+    "fr",
+    "pt-br",
+    "ru",
+    "zh-cn",
+    "de"
+  ],
+  "modules": [
+    "https://cdn.jsdelivr.net/npm/@inlang/plugin-i18next@4/dist/index.js",
+    "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-empty-pattern@latest/dist/index.js",
+    "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-identical-pattern@latest/dist/index.js",
+    "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-missing-translation@latest/dist/index.js",
+    "https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-without-source@latest/dist/index.js"
+  ],
+  "plugin.inlang.i18next": {
+    "pathPattern": {
+      "brain": "./frontend/public/locales/de/brain.json",
+      "chat": "./frontend/public/locales/de/chat.json",
+      "config": "./frontend/public/locales/de/config.json",
+      "contact": "./frontend/public/locales/de/contact.json",
+      "deleteOrUnsubscribeFormBrain": "./frontend/public/locales/de/deleteOrUnsubscribeFormBrain.json",
+      "explore": "./frontend/public/locales/de/explore.json",
+      "external_api_definition": "./frontend/public/locales/de/external_api_definition.json",
+      "home": "./frontend/public/locales/de/home.json",
+      "invitation": "./frontend/public/locales/de/invitation.json",
+      "knowledge": "./frontend/public/locales/de/knowledge.json",
+      "login": "./frontend/public/locales/de/login.json",
+      "logout": "./frontend/public/locales/de/logout.json",
+      "monetization": "./frontend/public/locales/de/monetization.json",
+      "translation": "./frontend/public/locales/de/translation.json",
+      "upload": "./frontend/public/locales/de/upload.json",
+      "user": "./frontend/public/locales/de/user.json"
     }
+  }
 }
 

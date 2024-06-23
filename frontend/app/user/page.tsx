@@ -55,69 +55,69 @@ const UserPage = (): JSX.Element => {
   }
 
   return (
-    <>
-      <div className={styles.page_header}>
-        <PageHeader iconName="user" label="Profile" buttons={buttons} />
-      </div>
-      <div className={styles.user_page_container}>
-        <div className={styles.content_wrapper}>
-          <Settings email={userData.email} />
+      <>
+        <div className={styles.page_header}>
+          <PageHeader iconName="user" label="Profile" buttons={buttons}/>
         </div>
-      </div>
-      <Modal
-        isOpen={isLogoutModalOpened}
-        setOpen={setIsLogoutModalOpened}
-        size="auto"
-        CloseTrigger={<div />}
-      >
-        <div className={styles.modal_wrapper}>
-          <h2>{t("areYouSure", { ns: "logout" })}</h2>
-          <div className={styles.buttons}>
-            <QuivrButton
-              onClick={() => setIsLogoutModalOpened(false)}
-              color="primary"
-              label={t("cancel", { ns: "logout" })}
-              iconName="close"
-            ></QuivrButton>
-            <QuivrButton
-              isLoading={isLoggingOut}
-              color="dangerous"
-              onClick={() => void handleLogout()}
-              label={t("logoutButton")}
-              iconName="logout"
-            ></QuivrButton>
+        <div className={styles.user_page_container}>
+          <div className={styles.content_wrapper}>
+            <Settings email={userData.email}/>
           </div>
         </div>
-      </Modal>
-      <Modal
-        isOpen={deleteAccountModalOpened}
-        setOpen={setDeleteAccountModalOpened}
-        size="auto"
-        CloseTrigger={<div />}
-      >
-        <div className={styles.modal_wrapper}>
-          <h2>Are you sure you want to delete your account ?</h2>
-          <div className={styles.buttons}>
-            <QuivrButton
-              onClick={() => setDeleteAccountModalOpened(false)}
-              color="primary"
-              label={t("cancel", { ns: "logout" })}
-              iconName="close"
-            ></QuivrButton>
-            <QuivrButton
-              isLoading={isLoggingOut}
-              color="dangerous"
-              onClick={() => {
-                void deleteUserData();
-                void handleLogout();
-              }}
-              label="Delete Account"
-              iconName="logout"
-            ></QuivrButton>
+        <Modal
+            isOpen={isLogoutModalOpened}
+            setOpen={setIsLogoutModalOpened}
+            size="auto"
+            CloseTrigger={<div/>}
+        >
+          <div className={styles.modal_wrapper}>
+            <h2>{t("areYouSure", {ns: "logout"})}</h2>
+            <div className={styles.buttons}>
+              <QuivrButton
+                  onClick={() => setIsLogoutModalOpened(false)}
+                  color="primary"
+                  label={t("cancel", {ns: "logout"})}
+                  iconName="close"
+              ></QuivrButton>
+              <QuivrButton
+                  isLoading={isLoggingOut}
+                  color="dangerous"
+                  onClick={() => void handleLogout()}
+                  label={t("logoutButton")}
+                  iconName="logout"
+              ></QuivrButton>
+            </div>
           </div>
-        </div>
-      </Modal>
-    </>
+        </Modal>
+        <Modal
+            isOpen={deleteAccountModalOpened}
+            setOpen={setDeleteAccountModalOpened}
+            size="auto"
+            CloseTrigger={<div/>}
+        >
+          <div className={styles.modal_wrapper}>
+            <h2>Are you sure you want to delete your account ?</h2>
+            <div className={styles.buttons}>
+              <QuivrButton
+                  onClick={() => setDeleteAccountModalOpened(false)}
+                  color="primary"
+                  label={t("cancel", {ns: "logout"})}
+                  iconName="close"
+              ></QuivrButton>
+              <QuivrButton
+                  isLoading={isLoggingOut}
+                  color="dangerous"
+                  onClick={() => {
+                    void deleteUserData();
+                    void handleLogout();
+                  }}
+                  label="Delete Account"
+                  iconName="logout"
+              ></QuivrButton>
+            </div>
+          </div>
+        </Modal>
+      </>
   );
 };
 

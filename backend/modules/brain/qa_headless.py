@@ -24,7 +24,7 @@ from modules.chat.service.chat_service import ChatService
 from pydantic import BaseModel, ConfigDict
 
 logger = get_logger(__name__)
-SYSTEM_MESSAGE = "Your name is Quivr. You're a helpful assistant. If you don't know the answer, just say that you don't know, don't try to make up an answer.When answering use markdown or any other techniques to display the content in a nice and aerated way."
+"""SYSTEM_MESSAGE = "Your name is Quivr. You're a helpful assistant. If you don't know the answer, just say that you don't know, don't try to make up an answer.When answering use markdown or any other techniques to display the content in a nice and aerated way."""
 chat_service = ChatService()
 
 
@@ -107,7 +107,7 @@ class HeadlessQA(BaseModel, QAInterface):
             chat_service.get_chat_history(self.chat_id)
         )
         prompt_content = (
-            self.prompt_to_use.content if self.prompt_to_use else SYSTEM_MESSAGE
+            self.prompt_to_use.content if self.prompt_to_use
         )
 
         messages = format_history_to_openai_mesages(
@@ -171,7 +171,7 @@ class HeadlessQA(BaseModel, QAInterface):
             chat_service.get_chat_history(self.chat_id)
         )
         prompt_content = (
-            self.prompt_to_use.content if self.prompt_to_use else SYSTEM_MESSAGE
+            self.prompt_to_use.content if self.prompt_to_use
         )
 
         messages = format_history_to_openai_mesages(

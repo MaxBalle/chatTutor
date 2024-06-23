@@ -1,0 +1,20 @@
+{
+  "password": "Passwort",
+  "googleLogin": "Mit Google fortfahren",
+  "errorPasswordMissed": "Bitte gib dein Passwort ein",
+  "magicLink": "Mit E-Mail fortfahren",
+  "errorMailMissed": "Bitte gib deine E-Mail-Adresse ein",
+  "talk_to": "Sprechen mit",
+  "restriction_message": "Unbezahlte Nutzer haben Zugang zu einer kostenlosen und begrenzten Demo von Quivr",
+  "email": "E-Mail-Adresse",
+  "cant_find": "Nicht gefunden?",
+  "try_again": "Versuche es erneut",
+  "check_your_email": {
+    "part1": "Wir haben dir gerade einen ",
+    "magic_link": "Magischen Link",
+    "part2": " gesendet, überprüfe deine E-Mails und folge den Schritten."
+  },
+  "login": "Anmelden"
+}
+
+
