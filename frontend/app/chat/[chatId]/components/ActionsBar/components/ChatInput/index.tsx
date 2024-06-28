@@ -1,6 +1,8 @@
 "use client";
 
 
+import { FaLightbulb, FaQuestion } from "react-icons/fa";
+
 import { CurrentBrain } from "@/lib/components/CurrentBrain/CurrentBrain";
 import Button from "@/lib/components/ui/Button";
 import Icon from "@/lib/components/ui/Icon/Icon";
@@ -10,6 +12,7 @@ import { useBrainContext } from "@/lib/context/BrainProvider/hooks/useBrainConte
 import { ChatEditor } from "./components/ChatEditor/ChatEditor";
 import { useChatInput } from "./hooks/useChatInput";
 import styles from "./index.module.scss";
+
 
 
 export const ChatInput = (): JSX.Element => {
@@ -75,11 +78,11 @@ export const ChatInput = (): JSX.Element => {
         <div className={styles.button_container}>
           <Button onClick={getExercises} variant={"primary"}>
             Neue Frage
-            <Icon name={"bulb"} size={"normal"} color={"black"}/>
+            <FaLightbulb />
           </Button>
           <Button onClick={explainFurther} variant={"primary"}>
             Weitere Erklärung
-            <Icon name={"question"} size={"normal"} color={"black"}/>
+            <FaQuestion />
           </Button>
           <Button onClick={endSession} variant={"danger"}>
             Thema verstanden

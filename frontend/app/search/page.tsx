@@ -38,14 +38,6 @@ const Search = (): JSX.Element => {
   }, [pathname, session]);
 
   const buttons: ButtonType[] = [
-    {
-      label: "Create brain",
-      color: "primary",
-      onClick: () => {
-        setIsBrainCreationModalOpened(true);
-      },
-      iconName: "brain",
-    },
   ];
 
   return (

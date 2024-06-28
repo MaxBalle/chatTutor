@@ -4,7 +4,6 @@ import { UUID } from "crypto";
 import { useEffect } from "react";
 
 import { AddBrainModal } from "@/lib/components/AddBrainModal";
-import { useBrainCreationContext } from "@/lib/components/AddBrainModal/brainCreation-provider";
 import PageHeader from "@/lib/components/PageHeader/PageHeader";
 import { UploadDocumentModal } from "@/lib/components/UploadDocumentModal/UploadDocumentModal";
 import { useChatContext } from "@/lib/context";
@@ -22,41 +21,15 @@ import styles from "./page.module.scss";
 const SelectedChatPage = (): JSX.Element => {
   const { getRootProps } = useCustomDropzone();
 
-  const { setShouldDisplayFeedCard, shouldDisplayFeedCard } =
+  const {shouldDisplayFeedCard } =
     useKnowledgeToFeedContext();
-  const { setIsBrainCreationModalOpened } = useBrainCreationContext();
-
   const { currentBrain, setCurrentBrainId } = useBrainContext();
   const { messages } = useChatContext();
 
   useChatNotificationsSync();
 
   const buttons: ButtonType[] = [
-    {
-      label: "Create brain",
-      color: "primary",
-      onClick: () => {
-        setIsBrainCreationModalOpened(true);
-      },
-      iconName: "brain",
-    },
-    {
-      label: "Add knowledge",
-      color: "primary",
-      onClick: () => {
-        setShouldDisplayFeedCard(true);
-      },
-      iconName: "uploadFile",
-      hidden: !currentBrain?.max_files,
-    },
-    {
-      label: "Manage current brain",
-      color: "primary",
-      onClick: () => {
-        window.location.href = `/studio/${currentBrain?.id}`;
-      },
-      iconName: "edit",
-    },
+
   ];
 
   useEffect(() => {
